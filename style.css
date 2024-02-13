@@ -1,3 +1,76 @@
-#heading {
-    color: red;
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1px solid black;
+
+}
+
+.logo > img {
+    width: 150px;
+    height: 100px;
+    
+}
+
+.nav-items {
+    padding: 0px 200px;
+    
+
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+
+
+    
+
+}
+.nav-items > ul > li {
+    padding: 10px;
+    margin: 10px;
+    font-size: larger;
+
+}
+
+.body {
+
+}
+
+.res-card {
+    background-color: rgb(244, 244, 244);
+    width: 200px;
+    border: 1px solid black;
+    margin: 5px;
+    
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.res-card :hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.card-logo {
+    width: 190px;
+    height: 120px;
+    padding: 5px;
+
+
+}
+
+.search {
+    padding: 5px;
+
+}
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
+    
 }
