@@ -1,6 +1,8 @@
 import RestaurantCart from "./RestaurantCart";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
 
 
 const Body = () => {
@@ -27,7 +29,6 @@ const Body = () => {
 
         return (listOfRestaurant.length === 0) ? < Shimmer /> :  (
             <div className="body">
-                 
                 <div className="filter">
                     <div className="search">
                         <input type="text" className="search-box" value={searchText} onChange={(e)=>{
@@ -56,9 +57,13 @@ const Body = () => {
                 <div className="res-container">
                    {
                     fileredRestaurant.map((restaurant) => (
-                      < RestaurantCart key={restaurant.info.id} resData={restaurant} />
-                    ))
-                    }
+                      <Link 
+                      key= {restaurant.info.id} 
+                      to={"/restaurantmenu/" + restaurant.info.id}  
+                      >
+                      <RestaurantCart resData={restaurant} />
+                      </Link> 
+                    ))}
                 </div>
             </div>
         );

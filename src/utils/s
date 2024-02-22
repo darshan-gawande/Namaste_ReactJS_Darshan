@@ -1,0 +1,7 @@
+// resInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards
+
+// resInfo.data.cards[2].card.card.info.name
+
+//  <Link key= {restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+//                           <RestaurantCart resData={restaurant} />
+//                     </Link>
