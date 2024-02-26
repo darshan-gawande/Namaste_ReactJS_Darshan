@@ -10,7 +10,7 @@ const Header = () => {
          <div className="header">
 
     <div className="logo">
-        <img src="" alt="App-logo"/>
+        <img src="https://www.shutterstock.com/image-vector/bird-nest-logo-vector-icon-260nw-1770214976.jpg" alt="App-logo"/>
     </div>
     
     <div className="nav-items">

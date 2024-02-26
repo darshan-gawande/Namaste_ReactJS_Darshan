@@ -6,8 +6,8 @@
 }
 
 .logo > img {
-    width: 150px;
-    height: 100px;
+    width: 120px;
+   
     
 }
 
@@ -32,9 +32,7 @@
 
 }
 
-.body {
 
-}
 
 .res-card {
     background-color: rgb(244, 244, 244);
@@ -102,4 +100,13 @@
 }
 .search-btn {
     cursor: pointer;
+}
+
+.user-card {
+    width: 200px;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
 }

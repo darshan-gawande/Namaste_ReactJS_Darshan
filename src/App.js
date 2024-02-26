@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
 import Body from "./Components/Body";
 import Header from "./Components/Header";
 import About from "./Components/About";
