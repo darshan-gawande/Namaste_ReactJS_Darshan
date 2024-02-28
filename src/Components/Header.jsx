@@ -11,29 +11,29 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-         <div className="header">
+         <div className="flex justify-between bg-pink-50 shadow-lg m-2">
 
     <div className="logo">
-        <img src="https://www.shutterstock.com/image-vector/bird-nest-logo-vector-icon-260nw-1770214976.jpg" alt="App-logo"/>
+        <img className="w-40" src= "https://images-platform.99static.com/dp8ehTneJPeFUiGc7OQFBtqSKrU=/460x460:1522x1522/500x500/top/smart/99designs-contests-attachments/132/132147/attachment_132147277" alt="App-logo"/>
     </div>
     
-    <div className="nav-items">
-        <ul>
-            <li>
+    <div className="nav-items flex items-center">
+        <ul className="flex p-8 ">
+            <li className="px-4">
                 Online Status: {onlineStatus ? "✅" : "🛑"}
             </li>
-            <li>
+            <li className="px-4">
                <Link to={"/"}> Home </Link>
             </li>
             <li>
                 <Link to={"/about"}>About Us</Link>
             </li>
-            <li>
+            <li className="px-4">
                 <Link to={"/contact"}>Contact Us</Link>
                 </li>
-            <li>Cart</li>
+            <li className="px-4">Cart</li>
 
-            <li>
+            <li className="px-4">
                 <Link to={"/grocery"}>Grocery</Link>
             </li>
 

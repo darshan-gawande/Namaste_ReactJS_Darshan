@@ -37,12 +37,12 @@ const Body = () => {
 
         return (listOfRestaurant.length === 0) ? < Shimmer /> :  (
             <div className="body">
-                <div className="filter">
-                    <div className="search">
-                        <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+                <div className="filter flex">
+                    <div className="search m-4 p-4">
+                        <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                             setSearchText(e.target.value);
                         }} />
-                            <button className="search-btn" onClick={() => {
+                            <button className="px-4 py-2 bg-green-400 m-2 rounded-lg" onClick={() => {
                                 
                                 const fileredRestaurant = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
 
@@ -51,18 +51,23 @@ const Body = () => {
                             }}>Search</button>
                        
                     </div>
-                    <button className="filter-btn" 
-                     onClick={() =>
+
+
+                    <div className="search m-4 p-4 items-center">
+                        <button className="px-4 py-2 bg-gray-200 rounded-lg m-2" 
+                        onClick={() =>
                         {
                         const filterList = listOfRestaurant.filter((res) => res.info.avgRating > (4.0));
                         setListOfRestaurant(filterList);
-                        }}> 
+                        }} > 
                         Top Rated Restaurant
-                    </button>
+                         </button>
+                    </div>
+                    
                 </div>
                
 
-                <div className="res-container">
+                <div className="flex flex-wrap ">
                    {
                     fileredRestaurant.map((restaurant) => (
                       <Link 
