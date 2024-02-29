@@ -1,6 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { CDN_URL } from "../utils/constants";
 
 
 const RestaurantMenu = () => {
@@ -8,7 +9,7 @@ const RestaurantMenu = () => {
     
     const resInfo = useRestaurantMenu(resid);
 
-    // console.log(resInfo);
+     console.log(resInfo);
 
     if(resInfo === null) {
         return (
@@ -21,14 +22,22 @@ const RestaurantMenu = () => {
 
     return (
         <div>
-            <h2>{name}</h2>
+           
+            <h2 className="font-bold text-xl py-4">{name}</h2>
            <p>{cuisines.join(", ")} - {costForTwoMessage}</p>
 
 
-           <h4>Menu</h4>
-           <ul>
-            {itemCards.map(item => <li key={item.card.info.id}> {item.card.info.name} - ₹ {item.card.info.price/100} </li> )}
+           <h4 className="px-4 py-4 font-semibold text-lg">Menu</h4>
+           
+             <ul className="flex flex-wrap">{itemCards.map(item => 
+            <li className="m-4 p-4 w-96 rounded-lg bg-gray-50 hover:bg-gray-200" key={item.card.info.id}>
+                <img className="rounded-lg" src={ CDN_URL + item.card.info.imageId} alt={item.card.info.name} /> 
+                <h2>{item.card.info.name} - ₹ {item.card.info.price/100}</h2> 
+                
+            </li> 
+            )}
            </ul>
+          
 
         </div>
     )
