@@ -19,5 +19,19 @@ import { CDN_URL } from "../utils/constants";
         );
     };
 
+
+    // Higher Order Function
+    // take an Input component and return component
+
+    export const promotedRestaurant = (RestaurantCart) => {
+      return () => {
+        return (
+          <div>
+            <h3>Promoted</h3>
+          </div>
+        )
+      }
+    }
+
     export default RestaurantCart;
     

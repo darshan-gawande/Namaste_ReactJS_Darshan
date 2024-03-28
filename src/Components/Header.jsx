@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import UserContext from "../utils/UserContext";
+import { APP_LOGO } from "../utils/constants";
 
 
 const Header = () => {
@@ -10,11 +11,15 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
 
+    const {defaultloggedIn} = useContext(UserContext);
+    console.log({defaultloggedIn});
+
+
     return (
          <div className="flex justify-between bg-pink-50 shadow-lg m-2">
 
     <div className="logo">
-        <img className="w-40" src= "https://images-platform.99static.com/dp8ehTneJPeFUiGc7OQFBtqSKrU=/460x460:1522x1522/500x500/top/smart/99designs-contests-attachments/132/132147/attachment_132147277" alt="App-logo"/>
+        <img className="w-40" src= { APP_LOGO }  alt="App-logo"/>
     </div>
     
     <div className="nav-items flex items-center">
@@ -38,9 +43,15 @@ const Header = () => {
             </li>
 
             
-            <button className="login-btn" onClick={() => {
+            <button className="login-btn" onClick={() => 
+            {
                 btnName === "Logout" ? setbtnName("Login") : setbtnName("Logout");
-            }} >{ btnName }</button>
+            }} >{ btnName }
+            </button>
+
+            <li className="px-4 font-bold">
+                {defaultloggedIn} 
+            </li>
         </ul>
     </div>
     </div>
